@@ -48,7 +48,6 @@
 - M1 (Zero+Few): accuracy `0.933`, avg rounds `0.45`
 - M2 (Zero+Few): accuracy `1.000`, avg rounds `0.32`
 - M3 (Zero+Few): accuracy `0.983`, avg rounds `0.25`
-- Full group metrics in `report/sphinteract_复现实验结果汇总.md`
 
 ## Notes
 - DB paths are auto-resolved (prefer `./databases/<DB>/<DB>.sqlite`, fallback `./databases/<DB>.sqlite`). Missing DBs are skipped.
