@@ -28,10 +28,8 @@
 - Optional Few-shot retrieval: `./userstudy_chroma/` (Chroma store with `nl/gold/feedback` metadata). If missing, Few-shot falls back to no examples.
 
 ## How to Run
-- Generate the notebook and run experiments:
-  - `python reproduce_sphinteract_ambiguity.py`
+- Run experiments:`reproduction_sphinteract_ambiguity_generated.ipynb`
   - The script will:
-    - Create `reproduction_sphinteract_ambiguity_generated.ipynb`
     - Filter and select 30 ambiguous samples via LLM
     - Run M1/M2/M3 in Zero/Few modes (parallel)
     - Write unified results to `experiment_results.json` and plot figures
@@ -42,7 +40,6 @@
 ## Outputs
 - `experiment_results.json`: unified results (per-sample `Method/Mode/Status/rounds/is_correct` etc.)
 - `figs/`: figures (performance overview, correctness breakdown, etc.)
-- `reproduction_sphinteract_ambiguity_generated.ipynb`: reproduction notebook
 
 ## Summary (30 Ambiguous)
 - M1 (Zero+Few): accuracy `0.933`, avg rounds `0.45`
@@ -53,6 +50,3 @@
 - DB paths are auto-resolved (prefer `./databases/<DB>/<DB>.sqlite`, fallback `./databases/<DB>.sqlite`). Missing DBs are skipped.
 - Few-shot retrieval depends on `userstudy_chroma`; missing store does not affect Zero-shot or main flow.
 - Ensure `.env` key is valid and OpenAI API is reachable.
-
-## License
-- See `LICENSE`
