@@ -1,6 +1,6 @@
 # Sphinteract Reproduction (30 Ambiguous Samples)
 
-- This repository reproduces the Sphinteract [Zhao, F., Deep, S., Psallidas, F., Floratou, A., Agrawal, D., & El Abbadi, A. (2024). Sphinteract: Resolving Ambiguities in NL2SQL Through User Interaction. PVLDB, 18(4), 1145 - 1158. doi:10.14778/3717755.3717772] framework on KaggleDBQA with three methods (M1/M2/M3). It includes dataset requirements, environment setup, and execution steps.
+- This repository reproduces the Sphinteract [1] framework on KaggleDBQA with three methods (M1/M2/M3). It includes dataset requirements, environment setup, and execution steps.
 - Key outputs: `experiment_results.json`, figures under `figs/`, and the notebook `reproduction_sphinteract_ambiguity_generated.ipynb`.
 
 ## Environment
@@ -50,3 +50,6 @@
 - DB paths are auto-resolved (prefer `./databases/<DB>/<DB>.sqlite`, fallback `./databases/<DB>.sqlite`). Missing DBs are skipped.
 - Few-shot retrieval depends on `userstudy_chroma`; missing store does not affect Zero-shot or main flow.
 - Ensure `.env` key is valid and OpenAI API is reachable.
+
+## Reference
+[1] Zhao, F., Deep, S., Psallidas, F., Floratou, A., Agrawal, D., & El Abbadi, A. (2024). Sphinteract: Resolving Ambiguities in NL2SQL Through User Interaction. PVLDB, 18(4), 1145 - 1158. doi:10.14778/3717755.3717772
