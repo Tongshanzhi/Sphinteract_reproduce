@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1350" viewBox="0 0 1400 1350">
+  <style>
+    .title { font: 700 28px/1.4 sans-serif; }
+    .line { font: 500 18px/1.6 sans-serif; }
+  </style>
+  <rect x="0" y="0" width="1400" height="1350" fill="#ffffff" />
+  <text x="40" y="60" class="title">考场模型选择函数速记</text>
+
+  <text x="40" y="110" class="line"><tspan font-weight="bold">线性回归</tspan>: sm.OLS(y,X); 加截距列; results.fit→summary; anova_lm 比较线性vs二次</text>
+  <text x="40" y="140" class="line"><tspan font-weight="bold">多元线性</tspan>: 特征标准化; 看 R²/F; 用CV评估; 残差图检验线性/同方差</text>
+  <text x="40" y="170" class="line"><tspan font-weight="bold">逻辑回归</tspan>: sm.GLM(Binomial) 或 LogisticRegression; 输出概率; 正则化防过拟合</text>
+  <text x="40" y="200" class="line"><tspan font-weight="bold">LDA</tspan>: 协方差近似相同; 小样本稳; 线性边界; 需标准化</text>
+  <text x="40" y="230" class="line"><tspan font-weight="bold">QDA</tspan>: 协方差不同; 非线性边界; 需更大样本; 易过拟合</text>
+  <text x="40" y="260" class="line"><tspan font-weight="bold">KNN</tspan>: 选 n_neighbors; 训练/测试标准化; 边界复杂时表现好</text>
+  <text x="40" y="290" class="line"><tspan font-weight="bold">前向选择</tspan>: 空模型起步; 逐步加入; 准则 AIC/BIC/CV; 在收益峰值停</text>
+  <text x="40" y="320" class="line"><tspan font-weight="bold">岭/ElasticNet</tspan>: 共线选 Ridge; 稀疏选 Lasso/ElasticNet(l1_ratio); 用CV选 alpha</text>
+  <text x="40" y="350" class="line"><tspan font-weight="bold">交叉验证</tspan>: cross_validate/cross_val_score; K=5/10; 分类用 StratifiedKFold</text>
+  <text x="40" y="380" class="line"><tspan font-weight="bold">非线性扩展</tspan>: 多项式/样条/LinearGAM; 先看残差形状; 用CV定阶/节点</text>
+  <text x="40" y="410" class="line"><tspan font-weight="bold">局部回归</tspan>: lowess(frac); frac小灵活高方差; frac大平滑高偏差</text>
+  <text x="40" y="440" class="line"><tspan font-weight="bold">决策树</tspan>: DTC/DTR; 控制 max_depth/min_samples_leaf; 成本复杂度剪枝</text>
+  <text x="40" y="470" class="line"><tspan font-weight="bold">Bagging/随机森林</tspan>: RandomForest; OOB 评估; n_estimators 足够大更稳</text>
+  <text x="40" y="500" class="line"><tspan font-weight="bold">Boosting</tspan>: GBR/GBC; learning_rate 小更稳需更多树; 控制基学习器深度</text>
+  <text x="40" y="530" class="line"><tspan font-weight="bold">BART</tspan>: 非线性+不确定性量化; 小样本稳健; 结果可给置信区间</text>
+  <text x="40" y="560" class="line"><tspan font-weight="bold">SVC</tspan>: C 权衡错分与间隔; kernel=linear/poly/rbf; gamma 控制影响范围; 标准化; class_weight 处理不均衡</text>
+  <text x="40" y="590" class="line"><tspan font-weight="bold">ROC/AUC</tspan>: roc_curve/roc_auc_score; 阈值无关评估; 同时看 Precision/Recall/F1</text>
+  <text x="40" y="620" class="line"><tspan font-weight="bold">SVM多分类</tspan>: ovo 默认 SVC; ovr 常见 LinearSVC; 类别多注意模型数量</text>
+
+  <text x="40" y="670" class="title">快速选择口诀</text>
+  <text x="40" y="710" class="line"><tspan font-weight="bold">线性关系</tspan>: 先 OLS; 残差弯曲→加多项式/样条; 共线→Ridge/Lasso</text>
+  <text x="40" y="740" class="line"><tspan font-weight="bold">二分类</tspan>: 逻辑回归做基线; 协方差同→LDA; 不同→QDA; 边界复杂→KNN/SVC(RBF)</text>
+  <text x="40" y="770" class="line"><tspan font-weight="bold">高方差模型</tspan>: 单树不稳→Bagging/RF; 需更高精度→Boosting</text>
+  <text x="40" y="800" class="line"><tspan font-weight="bold">数据不均衡</tspan>: 用 AUC/PR 曲线; class_weight/阈值调优; 关注 Recall</text>
+  <text x="40" y="830" class="line"><tspan font-weight="bold">调参策略</tspan>: 统一标准化; 先粗搜 Grid/Randomized CV; 再微调; 固定随机种子</text>
+  <text x="40" y="860" class="line"><tspan font-weight="bold">验证与报告</tspan>: K 折 CV 估计泛化误差; 报告 MSE/Accuracy+AUC; 给显著性或重要性</text>
+
+  <text x="40" y="910" class="title">常用函数一览（速记）</text>
+  <text x="40" y="950" class="line"><tspan font-weight="bold">回归</tspan>: sm.OLS; LinearRegression/Ridge/Lasso/ElasticNet; lowess; LinearGAM</text>
+  <text x="40" y="980" class="line"><tspan font-weight="bold">分类</tspan>: LogisticRegression; LDA/QDA; KNeighborsClassifier; SVC</text>
+  <text x="40" y="1010" class="line"><tspan font-weight="bold">树与集成</tspan>: DecisionTree(C/R); RandomForest(C/R); GradientBoosting(C/R)</text>
+  <text x="40" y="1040" class="line"><tspan font-weight="bold">评估</tspan>: cross_validate; roc_curve; roc_auc_score; classification_report</text>
+  <text x="40" y="1070" class="line"><tspan font-weight="bold">选择</tspan>: mlxtend.SequentialFeatureSelector; anova_lm 嵌套比较</text>
+
+  <text x="40" y="1130" class="line">提示: 先画图看关系; 始终做交叉验证; 用简单模型做基线再升级; 所有参数记录在试卷边角</text>
+</svg>
